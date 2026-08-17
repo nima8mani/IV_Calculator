@@ -56,7 +56,7 @@ void amal_tavan(){
     int adad_tavan;
     double temp_t;
     bool dorost = false;
-    
+
     while(!dorost){
         cout << "Enter exponent (b-integer): ";
         string reshte_tavan;
@@ -70,7 +70,7 @@ void amal_tavan(){
 		 else{
             cout << "The input is incorrect. Please try again." << endl;
         }
-    } 
+    }
     if(adad_paye==0 && adad_tavan<0){
         cout << "Division by zero is not possible!" << endl;
         return;
@@ -80,7 +80,7 @@ void amal_tavan(){
         for(int k=0; k<adad_tavan; k++){
             hasel *= adad_paye;
         }
-    } 
+    }
 	else{
         for(int k=0; k<-adad_tavan; k++){
             hasel *= adad_paye;
@@ -111,13 +111,13 @@ void amal_log(){
 void amal_mosalasat(int entekhab){
     double daraje = daryaft_meghdar("Enter angle in degrees: ");
     double radian = daraje * 3.14159265358979323846 / 180.0;
-    
+
     if(entekhab==8){
         cout << "Result (Sin): " << sin(radian) << endl;
     }
 	 else if(entekhab==9){
         cout << "Result (Cos): " << cos(radian) << endl;
-    } 
+    }
 	else if(entekhab==10){
         if(fmod(daraje-90 , 180) == 0){
             cout << "The tangent of this angle is undefined." << endl;
@@ -128,8 +128,7 @@ void amal_mosalasat(int entekhab){
     }
 }
 int main(){
-	
-	
+
     int bakhsh_menu = 0;
     do{
         cout << endl << "----------------------------------------" << endl;
