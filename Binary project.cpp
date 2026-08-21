@@ -2,6 +2,7 @@
 #include <cmath>
 #include <string>
 #include <sstream>
+
 using namespace std;
 
 //mashin hesab
@@ -10,13 +11,14 @@ using namespace std;
 double daryaft_meghdar(string matn_chap){
     double meghdar;
     bool dorost = false;
+
     while(!dorost){
         cout << matn_chap;
         string reshte;
         getline(cin , reshte);
         stringstream jaryan_adad(reshte);
         string ezafe;
-        
+
         if((jaryan_adad >> meghdar) && !(jaryan_adad >> ezafe)) {
             dorost = true;
         }
@@ -24,6 +26,7 @@ double daryaft_meghdar(string matn_chap){
             cout << "The input is incorrect. Please try again." << endl;
         }
     }
+
     return meghdar;
 }
 void amal_jam(){
@@ -47,7 +50,7 @@ void amal_taghsim(){
     if(maghsoom_aleyh == 0){
         cout << "Division by zero is not possible!" << endl;
     }
-	 else{
+    else{
         cout << "Result: " << maghsoom / maghsoom_aleyh << endl;
     }
 }
@@ -63,7 +66,8 @@ void amal_tavan(){
         getline(cin , reshte_tavan);
         stringstream jaryan_tavan(reshte_tavan);
         string ezafe;
-        if((jaryan_tavan >> temp_t) && !(jaryan_tavan >> ezafe) && temp_t == (int)temp_t){
+        if((jaryan_tavan >> temp_t) && !(jaryan_tavan >> ezafe)
+			&& temp_t == (int)temp_t){
             adad_tavan = (int)temp_t;
             dorost = true;
         }
@@ -121,7 +125,7 @@ void amal_mosalasat(int entekhab){
 	else if(entekhab==10){
         if(fmod(daraje-90 , 180) == 0){
             cout << "The tangent of this angle is undefined." << endl;
-        } 
+        }
 		else{
             cout << "Result (Tan): " << tan(radian) << endl;
         }
@@ -139,7 +143,7 @@ int main(){
         cout << "8. Sin()" << endl << "9. Cos()" << endl << "10. Tan()" << endl << "11. Exit" << endl;
         cout << "----------------------------------------" << endl;
         cout << "Please select an option: ";
-             
+
         string matn_voroodi;
         getline(cin , matn_voroodi);
         stringstream jaryan(matn_voroodi);
@@ -165,11 +169,11 @@ int main(){
 			 break;
             case 7: amal_log();
 			 break;
-            case 8: 
-            case 9: 
+            case 8:
+            case 9:
             case 10: amal_mosalasat(bakhsh_menu);
 			 break;
-            case 11: 
+            case 11:
                 cout << "Exiting the program. Goodbye!" << endl;
                 break;
             default:  cout << "The input is incorrect. Please try again." << endl;
