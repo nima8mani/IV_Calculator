@@ -8,6 +8,69 @@ using namespace std;
 //mashin hesab
 //ilia varmaziyar
 
+double daryaft_meghdar(string matn_chap);
+void amal_jam();
+void amal_tafrigh();
+void amal_zarb();
+void amal_taghsim();
+void amal_tavan();
+void amal_jazr();
+void amal_log();
+void amal_mosalasat(int entekhab);
+
+int main(){
+
+    int bakhsh_menu = 0;
+    do{
+        cout << endl << "----------------------------------------" << endl;
+        cout << "           Advanced Calculator" << endl;
+        cout << "----------------------------------------" << endl;
+        cout << "1. Addition" << endl << "2. Subtraction" << endl << "3. Multiplication" << endl << "4. Division" << endl;
+        cout << "5. Exponentiation" << endl << "6. Square Root" << endl << "7. Logarithm" << endl;
+        cout << "8. Sin()" << endl << "9. Cos()" << endl << "10. Tan()" << endl << "11. Exit" << endl;
+        cout << "----------------------------------------" << endl;
+        cout << "Please select an option: ";
+
+        string matn_voroodi;
+        getline(cin , matn_voroodi);
+        stringstream jaryan(matn_voroodi);
+        double temp_bakhsh;
+        string ezafe;
+        if(!(jaryan >> temp_bakhsh) || (jaryan >> ezafe) || temp_bakhsh != (int)temp_bakhsh){
+            cout << "The input is incorrect. Please try again." << endl;
+            continue;
+        }
+        bakhsh_menu = (int)temp_bakhsh;
+        switch(bakhsh_menu){
+            case 1: amal_jam();
+			 break;
+            case 2: amal_tafrigh();
+			 break;
+            case 3: amal_zarb();
+			 break;
+            case 4: amal_taghsim();
+			 break;
+            case 5: amal_tavan();
+			 break;
+            case 6: amal_jazr();
+			 break;
+            case 7: amal_log();
+			 break;
+            case 8:
+            case 9:
+            case 10: amal_mosalasat(bakhsh_menu);
+			 break;
+            case 11:
+                cout << "Exiting the program. Goodbye!" << endl;
+                break;
+            default:  cout << "The input is incorrect. Please try again." << endl;
+        }
+    }
+	while(bakhsh_menu != 11);
+    return 0;
+}
+
+
 double daryaft_meghdar(string matn_chap){
     double meghdar;
     bool dorost = false;
@@ -130,55 +193,4 @@ void amal_mosalasat(int entekhab){
             cout << "Result (Tan): " << tan(radian) << endl;
         }
     }
-}
-int main(){
-
-    int bakhsh_menu = 0;
-    do{
-        cout << endl << "----------------------------------------" << endl;
-        cout << "           Advanced Calculator" << endl;
-        cout << "----------------------------------------" << endl;
-        cout << "1. Addition" << endl << "2. Subtraction" << endl << "3. Multiplication" << endl << "4. Division" << endl;
-        cout << "5. Exponentiation" << endl << "6. Square Root" << endl << "7. Logarithm" << endl;
-        cout << "8. Sin()" << endl << "9. Cos()" << endl << "10. Tan()" << endl << "11. Exit" << endl;
-        cout << "----------------------------------------" << endl;
-        cout << "Please select an option: ";
-
-        string matn_voroodi;
-        getline(cin , matn_voroodi);
-        stringstream jaryan(matn_voroodi);
-        double temp_bakhsh;
-        string ezafe;
-        if(!(jaryan >> temp_bakhsh) || (jaryan >> ezafe) || temp_bakhsh != (int)temp_bakhsh){
-            cout << "The input is incorrect. Please try again." << endl;
-            continue;
-        }
-        bakhsh_menu = (int)temp_bakhsh;
-        switch(bakhsh_menu){
-            case 1: amal_jam();
-			 break;
-            case 2: amal_tafrigh();
-			 break;
-            case 3: amal_zarb();
-			 break;
-            case 4: amal_taghsim();
-			 break;
-            case 5: amal_tavan();
-			 break;
-            case 6: amal_jazr();
-			 break;
-            case 7: amal_log();
-			 break;
-            case 8:
-            case 9:
-            case 10: amal_mosalasat(bakhsh_menu);
-			 break;
-            case 11:
-                cout << "Exiting the program. Goodbye!" << endl;
-                break;
-            default:  cout << "The input is incorrect. Please try again." << endl;
-        }
-    }
-	while(bakhsh_menu != 11);
-    return 0;
 }
