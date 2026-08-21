@@ -2,6 +2,7 @@
 #include <cmath>
 #include <string>
 #include <sstream>
+#include <iomanip>
 
 using namespace std;
 
@@ -22,13 +23,13 @@ int main(){
 
     int bakhsh_menu = 0;
     do{
-        cout << endl << "----------------------------------------" << endl;
+        cout << endl << setw(30) << setfill('-') << endl;
         cout << "           Advanced Calculator" << endl;
-        cout << "----------------------------------------" << endl;
+        cout << endl << setw(30) << setfill('-') << endl;
         cout << "1. Addition" << endl << "2. Subtraction" << endl << "3. Multiplication" << endl << "4. Division" << endl;
         cout << "5. Exponentiation" << endl << "6. Square Root" << endl << "7. Logarithm" << endl;
         cout << "8. Sin()" << endl << "9. Cos()" << endl << "10. Tan()" << endl << "11. Exit" << endl;
-        cout << "----------------------------------------" << endl;
+        cout << endl << setw(30) << setfill('-') << endl;
         cout << "Please select an option: ";
 
         string matn_voroodi;
