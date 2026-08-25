@@ -98,16 +98,19 @@ void amal_jam(){
     double adad2 = daryaft_meghdar("Enter second number: ");
     cout << "Result: " << adad1+adad2 << endl;
 }
+
 void amal_tafrigh(){
     double adad1 = daryaft_meghdar("Enter first number: ");
     double adad2 = daryaft_meghdar("Enter second number: ");
     cout << "Result: " << adad1-adad2 << endl;
 }
+
 void amal_zarb(){
     double adad1 = daryaft_meghdar("Enter first number: ");
     double adad2 = daryaft_meghdar("Enter second number: ");
     cout << "Result: " << adad1*adad2 << endl;
 }
+
 void amal_taghsim(){
     double maghsoom = daryaft_meghdar("Enter first number: ");
     double maghsoom_aleyh = daryaft_meghdar("Enter second number: ");
@@ -118,6 +121,7 @@ void amal_taghsim(){
         cout << "Result: " << maghsoom / maghsoom_aleyh << endl;
     }
 }
+
 void amal_tavan(){
     double adad_paye =daryaft_meghdar("Enter base (a): ");
     int adad_tavan;
@@ -157,6 +161,7 @@ void amal_tavan(){
     }
     cout << "Result: " << hasel << endl;
 }
+
 void amal_jazr(){
     double value = daryaft_meghdar("Enter a number: ");
     if(value<0){
@@ -166,6 +171,7 @@ void amal_jazr(){
         cout << "Result: " << sqrt(value) << endl;
     }
 }
+
 void amal_log(){
     double base_val = daryaft_meghdar("Enter base: ");
     double num_val =daryaft_meghdar("Enter number: ");
@@ -176,22 +182,22 @@ void amal_log(){
         cout << "Result: " << log10(num_val) / log10(base_val) << endl;
     }
 }
+
 void amal_mosalasat(int entekhab){
     double daraje = daryaft_meghdar("Enter angle in degrees: ");
     double radian = daraje * 3.14159265358979323846 / 180.0;
+    
+    switch(entekhab){
+        case 8: cout << "Result (Sin): " << sin(radian) << endl;
 
-    if(entekhab==8){
-        cout << "Result (Sin): " << sin(radian) << endl;
-    }
-	 else if(entekhab==9){
-        cout << "Result (Cos): " << cos(radian) << endl;
-    }
-	else if(entekhab==10){
-        if(fmod(daraje-90 , 180) == 0){
-            cout << "The tangent of this angle is undefined." << endl;
-        }
-		else{
-            cout << "Result (Tan): " << tan(radian) << endl;
-        }
+        case 9: cout << "Result (Cos): " << cos(radian) << endl;
+
+        case 10: if(fmod(daraje-90 , 180) == 0){
+                cout << "The tangent of this angle is undefined." << endl;
+            }else{
+                cout << "Result (Tan): " << tan(radian) << endl;
+            }
+
+        default: std::cout << "You shouldn't be here!" << endl;
     }
 }
